@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      h1 {
+        color: #1d64d8;
+        margin: 0;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        line-height: 48px;
+      }
+      h2 {
+        text-align: center;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        line-height: 48px;
+        font-weight: 100;
+      }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      li:hover {
+        background: #fefbf0;
+      }
+      p {
+        font-size: 15px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
+      }
+      button {
+        width: 125px;
+        display: block;
+        margin: 20px auto;
+        padding: 20px;
+        background: #1a63d6;
+        border: solid #0e5dd3;
+        border-radius: 25px;
+        color: #ffffff;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      button:hover {
+        background: #7d9ece;
+        border: solid #7d9ece;
+        cursor: pointer;
+      }
+      .signage {
+        font-size: 15px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: #4d4d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌤
+      <br />
+      Currently 40° in Dubai
+    </h1>
+    <h2>24° / <strong>40°</strong></h2>
+    <ul>
+      <li>
+        <h3>🌦 Tommorow</h3>
+        <p>22° / <strong>38°</strong></p>
+      </li>
+      <li>
+        <h3>🌤 Saturday</h3>
+        <p>23° / <strong>39°</strong></p>
+      </li>
+      <li>
+        <h3>☀️ Sunday</h3>
+        <p>26° / <strong>43°</strong></p>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <p class="signage">Coded by Esen Akman</p>
+    <script>
+      function changeCity() {
+        let city = prompt("What city do you live in?");
+        let temp = prompt("What temperature is it?");
+        if (temp <= "0") {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = "🥶 <br /> Currently " + temp + "°C in " + city + ".";
+        } else {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = "☀️ <br /> Currently " + temp + "°C in " + city + ".";
+        }
+      }
+      let cityButton = document.querySelector("button");
+      cityButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
